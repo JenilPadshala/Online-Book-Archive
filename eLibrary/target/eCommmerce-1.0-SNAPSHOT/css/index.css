@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.bookContainer a{
+    text-decoration: none;
+}
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+p {
+  color: var(--dark-grey);
+}
+.bodyBack {
+  background-image: url(../resources/body-pattern.png);
+  height: 100vh;
+  position: absolute;
+  width: 100vw;
+  opacity: 0.5;
+  z-index: -10000;
+  position: fixed;
+}
+:root {
+  --purple: #8e44ad;
+  --orange: #e67e22;
+  --blue: #0984e3;
+  --red: #e74c3c;
+  --dark-grey: #485460;
+  --black: #1e272e;
+  --light: #ecf0f1;
+  --green: #568203;
+  --darkWhite: #edeade;
+  --crimson: #dc143c;
+  --swiper-navigation-size: 16px; /* To edit the size of the arrows */
+  --swiper-navigation-color: #000;
+  --swiper-navigation-size: 6px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  min-width: 70%;
+}
+navbar ul li {
+  margin-left: 0px;
+  font-size: 1.15rem;
+  transition: 0s ease-in;
+  cursor: pointer;
+  min-width: 1.5rem;
+}
+
+navbar img {
+  width: 200px;
+  background-color: white;
+  padding: 1rem;
+  padding-right: 1.5rem;
+  border-radius: 10px;
+}
+
+/* Navbar drop down menu */
+navbar ul li ul {
+  position: absolute;
+  display: block;
+  min-width: 8rem;
+  min-height: 9rem;
+  z-index: 1000;
+  background-color: green;
+  right: 27rem;
+  top: 4rem;
+  display: flex;
+  padding:1.5rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  display: none;
+  padding-top: 1rem;
+  background-color: var(--crimson);
+}
+navbar ul li ul li {
+  margin-top: 0.5rem;
+}
+navbar ul li:focus-within > ul,
+navbar ul li:hover > ul {
+  display: initial;
+}
+.options {
+  width: 60%;
+}
+.logo {
+  width: 40%;
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(189, 217, 209, 0.93);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(189, 217, 209, 0.93);
+  box-shadow: 0px 0px 5px 1px rgba(189, 217, 209, 0.93);
+  background-color: white;
+  margin-right: 30rem;
+  cursor: pointer;
+  padding-top: 0.5rem;
+}
+
+navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  padding-right: 5rem;
+  z-index: 1000;
+  width: 100vw;
+  background-color: #dc143c;
+  text-align: center;
+  box-shadow: -2px 1px 5px 1px rgba(0, 0, 0, 0.66);
+  -webkit-box-shadow: -2px 1px 5px 1px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: -2px 1px 5px 1px rgba(0, 0, 0, 0.66);
+  position: fixed;
+  font-weight: bold;
+
+  color: white;
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+.bar {
+  width: 25px;
+  display: block;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--dark-grey);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+
+  min-width: 1.5rem;
+}
+navbar a:hover {
+  text-shadow: 5px 2px 12px rgba(244, 219, 219, 1);
+}
+.product-container {
+  display: flex;
+  overflow: hidden;
+  transition: 0.5s ease-in;
+  scroll-behavior: smooth;
+}
+
+.categories {
+  padding-top: 10rem;
+
+  min-height: 20rem;
+  max-width: 80rem;
+  margin: auto;
+
+  margin-bottom: 2rem;
+}
+
+hr {
+  width: 80rem;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.items {
+  margin-left: 50px;
+  margin-right: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  margin-top: rem;
+  font-weight: 600;
+}
+.bPic {
+  float: left;
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+
+  margin: auto;
+
+  border-radius: 70px;
+}
+.pre-btn,
+.nxt-btn {
+  position: absolute;
+  font-size: 2rem;
+  background-color: white;
+  border-style: none;
+  z-index: 10;
+
+  opacity: 0.5;
+}
+.pre-btn {
+  left: 4.5rem;
+  top: 14.5rem;
+}
+.nxt-btn {
+  right: 4.5rem;
+  top: 14.5rem;
+}
+.pre-btn:hover,
+.nxt-btn:hover {
+  opacity: 1;
+}
+
+.bookContainer .category-list {
+  display: flex;
+  overflow: hidden;
+}
+.allBooks {
+  padding-left: 5rem;
+  position: relative;
+  /* animation-name: entry;
+  animation-duration: 2s; */
+}
+/* @keyframes entry {
+  from {
+    right: -400px;
+  }
+  to {
+    right: 0;
+  }
+} */
+
+/* Banner Styles */
+.banner {
+  background-size: cover;
+
+  height: 16rem;
+  margin: auto;
+  width: 80rem;
+}
+
+/* Books List css */
+
+.bookContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.categoryTitle {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 2.5rem;
+}
+.items.bookItems {
+  height: 18rem;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 12rem;
+  -webkit-box-shadow: 0px 0px 1px 1px rgba(189, 217, 209, 0.93);
+  -moz-box-shadow: 0px 0px 1px 1px rgba(189, 217, 209, 0.93);
+  box-shadow: 0px 0px 1px 1px rgba(189, 217, 209, 0.93);
+  margin-bottom: 3rem;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+.bPic.bookPic {
+  border-radius: 1px;
+  width: 10rem;
+  height: 15rem;
+}
+.bookName {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 1rem;
+}
+.author {
+  font-size: 1rem;
+}
+/* Animation */
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .navbar {
+    position: relative;
+  }
+
+  .navbar .options {
+    position: absolute;
+    background-color: var(--darkWhite);
+    right: -100%;
+    width: 30%;
+    text-align: center;
+    top: 7rem;
+    height: 100vh;
+    align-items: center;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+  }
+
+  .options.active {
+    display: block;
+    opacity: 100;
+    right: 0;
+  }
+
+  .navbar .options ul {
+    display: block;
+    padding-top: 3rem;
+  }
+  .forms form {
+    width: 50%;
+  }
+  .navbar .options ul li {
+    margin: 2rem;
+    font-size: 1.2rem;
+  }
+}
